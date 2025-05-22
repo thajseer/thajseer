@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🎮 My Entertainment Zone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="darkModeToggle" class="colorful-btn">🌙 Dark Mode</button>
+
+  <h1 class="animated">🎉 Welcome to the Entertainment Zone 🎉</h1>
+
+  <h2>my website features are: 
+    <ol>
+      <li>Meaningful image downloader</li>
+      <li>View motivational Quote's slideshow</li>
+      <li>Your photo's background changer</li>
+      <li>Two mini games</li>
+      <li>Some plus one text book pdf downloader</li>
+      <li>Music/song play and downloader</li>
+      <li>Play videos</li>
+      <li>Share review</li>
+    </ol>
+  </h2>
+
+  <h2>🔐 Login with Google</h2>
+  <button onclick="googleSignIn()" class="colorful-btn">Sign In with Google</button>
+  <p id="user-info"></p>
+
+  <input type="text" id="search" placeholder="Search..." class="search-input" />
+
+  <h2>🟢🔴If you want change background your photos/video's, click 🌐</h2>
+  <a href="https://www.remove.bg" target="_blank" class="colorful-btn">Click here to open Remove.bg</a>
+
+   <h2>🟢🔴 If you want to check if your mobile number is being misused by strangers🌐</h2>
+  <a href="https://tafcop.sancharsaathi.gov.in/telecomUser/" target="_blank" class="colorful-btn">Click here to open tafcop.sancharsaathi.gov.in/telecomUser</a>
+
+   <h2>🟢🔴If you want remove photos water mark 🌐</h2>
+  <a href="https://www.watermarkremover.io/" target="_blank" class="colorful-btn">Click here to open watermarkremover.io/</a>
+
+  <!-- Quote Section -->
+  <div id="quoteBox" class="quote-box"></div>
+
+  <!-- Image Gallery Section -->
+  <div class="image-gallery">
+    <div class="image-item">
+      <h2>Way of money</h2>
+      <img src="money.jpg" alt="Way of money" width="300" />
+      <a href="money.jpg" download>
+        <button class="colorful-btn">⬇️ Download Image</button>
+      </a>
+    </div>
+    
+    <div class="image-item">
+      <h2>Cool Image</h2>
+      <img src="single.jpg" alt="Cool Image" width="300">
+      <a href="single.jpg" download>
+        <button class="colorful-btn">⬇️ Download Image</button>
+      </a>
+    </div>
+
+    <div class="image-item">
+      <h2>Cool Image</h2>
+      <img src="death.jpg" alt="Cool Image" width="300">
+      <a href="death.jpg" download>
+        <button class="colorful-btn">⬇️ Download Image</button>
+      </a>
+    </div>
+
+    <div class="image-item">
+      <h2>Cool Image</h2>
+      <img src="grandmother.jpg" alt="Cool Image" width="300">
+      <a href="grandmother.jpg" download>
+        <button class="colorful-btn">⬇️ Download Image</button>
+      </a>
+    </div>
+
+    <div class="image-item">
+      <h2>Cool Image</h2>
+      <img src="mobile.png" alt="Cool Image" width="300">
+      <a href="mobile.png" download>
+        <button class="colorful-btn">⬇️ Download Image</button>
+      </a>
+    </div>
+
+    <div class="image-item">
+      <h2>Cool Image</h2>
+      <img src="mother.jpg" alt="Cool Image" width="300">
+      <a href="mother.jpg" download>
+        <button class="colorful-btn">⬇️ Download Image</button>
+      </a>
+    </div>
+
+    <div class="image-item">
+      <h2>Cool Image</h2>
+      <img src="pepole.jpg" alt="Cool Image" width="300">
+      <a href="pepole.jpg" download>
+        <button class="colorful-btn">⬇️ Download Image</button>
+      </a>
+    </div>
+
+    <div class="image-item">
+      <h2>Cool Image</h2>
+      <img src="respect.jpg" alt="Cool Image" width="300">
+      <a href="respect.jpg" download>
+        <button class="colorful-btn">⬇️ Download Image</button>
+      </a>
+    </div>
+
+    <div class="image-item">
+      <h2>Cool Image</h2>
+      <img src="skill.jpg" alt="Cool Image" width="300">
+      <a href="skill.jpg" download>
+        <button class="colorful-btn">⬇️ Download Image</button>
+      </a>
+    </div>
+
+    <div class="image-item">
+      <h2>Cool Image</h2>
+      <img src="tallent.jpg" alt="Cool Image" width="300">
+      <a href="tallent.jpg" download>
+        <button class="colorful-btn">⬇️ Download Image</button>
+      </a>
+    </div>
+  </div>
+
+  <h3 class="animated">🔴 Click start button to play the games 🔴</h3>
+
+  <!-- Game 1 -->
+  <section class="game-section">
+    <h2>Catch the Ball 🎯</h2>
+    <canvas id="game1" width="400" height="400"></canvas><br />
+    <button onclick="startGame1()" class="colorful-btn">Start</button>
+    <button onclick="pauseGame1()" class="colorful-btn">Pause</button>
+    <button onclick="resetGame1()" class="colorful-btn">Reset</button>
+    <p>Score: <span id="currentScore1">0</span> | High Score: <span id="highScore1">0</span></p>
+  </section>
+
+  <!-- Game 2 -->
+  <section class="game-section">
+    <h2>Color Click 🔴🟢🔵</h2>
+    <div id="colorGame">
+      <div id="colorBox"></div>
+      <button onclick="startColorGame()" class="colorful-btn">Start</button>
+      <button onclick="pauseColorGame()" class="colorful-btn">Pause</button>
+      <button onclick="resetColorGame()" class="colorful-btn">Reset</button>
+      <p>Score: <span id="colorScore">0</span> | High Score: <span id="colorHighScore">0</span></p>
+    </div>
+  </section>
+
+  <!-- PDF Downloader Section -->
+  <section>
+    <h2>Some Plus One Textbook PDF Downloader</h2>
+    <div class="pdf-grid">
+      <div class="pdf-item">
+        <a href="Biology Textbook Part 1 for Higher Secondary Class 11 Kerala Plus One 1.pdf" target="_blank">
+          <button class="colorful-btn">📖 Biology part 1</button>
+        </a>
+        <a href="Biology Textbook Part 1 for Higher Secondary Class 11 Kerala Plus One 1.pdf" download>
+          <button class="colorful-btn">⬇️ Download PDF</button>
+        </a>
+      </div>
+    
+      <div class="pdf-item">
+        <a href="Computer Science Textbook Part I for Higher Secondary Class 11 Kerala Plus One.pdf" target="_blank">
+          <button class="colorful-btn">📖 cs part 1</button>
+        </a>
+        <a href="Computer Science Textbook Part I for Higher Secondary Class 11 Kerala Plus One.pdf" download>
+          <button class="colorful-btn">⬇️ Download PDF</button>
+        </a>
+      </div>
+
+       <div class="pdf-item">
+        <a href="Business Studies Textbook  for Higher Secondary Class 11 Kerala Plus One.pdf" target="_blank">
+          <button class="colorful-btn">📖 Business s part 1</button>
+        </a>
+        <a href="Business Studies Textbook  for Higher Secondary Class 11 Kerala Plus One.pdf" Textbook Part 1  for Higher Secondary Class 11 Kerala Plus One.pdf" download>
+          <button class="colorful-btn">⬇️ Download PDF</button>
+        </a>
+      </div>
+
+       <div class="pdf-item">
+        <a href="Physics Textbook  Part I for Higher Secondary Class 11 Kerala Plus One.pdf" target="_blank">
+          <button class="colorful-btn">📖 physics part 1</button>
+        </a>
+        <a href="Physics Textbook  Part I for Higher Secondary Class 11 Kerala Plus One.pdf" download>
+          <button class="colorful-btn">⬇️ Download PDF</button>
+        </a>
+      </div>
+
+       <div class="pdf-item">
+        <a href="Chemistry Textbook Part 1  for Higher Secondary Class 11 Kerala Plus One.pdf" target="_blank">
+          <button class="colorful-btn">📖 Chemistry part 1</button>
+        </a>
+        <a href="Chemistry Textbook Part 1  for Higher Secondary Class 11 Kerala Plus One.pdf" download>
+          <button class="colorful-btn">⬇️ Download PDF</button>
+        </a>
+      </div>
+
+       <div class="pdf-item">
+        <a href="Electronics Textbook  for Higher Secondary Class 11 Kerala Plus One.pdf" target="_blank">
+          <button class="colorful-btn">📖 electronics part 1</button>
+        </a>
+        <a href="Electronics Textbook  for Higher Secondary Class 11 Kerala Plus One.pdf" download>
+          <button class="colorful-btn">⬇️ Download PDF</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Music Player Section -->
+  <section class="music-section">
+    <h2>🎵 Music Player</h2>
+    <div class="music-player">
+      <h3>jamalul_wujood</h3>
+      <audio controls>
+        <source src="jamalul_wujood.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a href="jamalul_wujood.mp3" download class="colorful-btn">Download Music</a>
+    </div>
+    
+    <div class="music-player">
+      <h3>Satisfya</h3>
+      <audio controls>
+        <source src="Satisfya - Imran Khan.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a href="Satisfya - Imran Khan.mp3" download class="colorful-btn">Download Music</a>
+    </div>
+
+    <div class="music-player">
+      <h3>humood_ulhude</h3>
+      <audio controls>
+        <source src="humood_alhude_kuwait.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a href="humood_alhude_kuwait.mp3" download class="colorful-btn">Download Music</a>
+    </div>
+
+    <div class="music-player">
+      <h3>sajd-faheem</h3>
+      <audio controls>
+        <source src="Sajde - Faheem Abdullah.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a href="Sajde - Faheem Abdullah.mp3" download class="colorful-btn">Download Music</a>
+    </div>
+
+    <div class="music-player">
+      <h3>tasbih</h3>
+      <audio controls>
+        <source src="tasbih.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a href="tasbih.mp3" download class="colorful-btn">Download Music</a>
+    </div>
+
+    <div class="music-player">
+      <h3>whoopty</h3>
+      <audio controls>
+        <source src="Whoopty.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a href="Whoopty.mp3" download class="colorful-btn">Download Music</a>
+    </div>
+
+    <div class="music-player">
+      <h3>akame poothi</h3>
+      <audio controls>
+        <source src="Akame Poothi Avalan.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a href="Akame Poothi Avalan.mp3" download class="colorful-btn">Download Music</a>
+    </div>
+
+    <div class="music-player">
+      <h3>ye-lile</h3>
+      <audio controls>
+        <source src="Ye-Lili-Ye-Lila.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a href="Ye-Lili-Ye-Lila.mp3".mp3" download class="colorful-btn">Download Music</a>
+    </div>
+
+    <div class="music-player">
+      <h3>eid-mubarak</h3>
+      <audio controls>
+        <source src="eid-mubarak.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a href="eid-mubarak.mp3" download class="colorful-btn">Download Music</a>
+    </div>
+  </section>
+
+  <!-- Video Player Section -->
+  <section class="video-section">
+    <h2>🎬 Videos</h2>
+    <div class="video-player">
+      <h3>Kend 1</h3>
+      <video width="320" height="240" controls>
+        <source src="kend 1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-player">
+      <h3>allen waiker-on my way lyric</h3>
+      <video width="320" height="240" controls>
+        <source src="Alan_Walker-on my way.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews-section">
+    <h2>💬 Reviews</h2>
+    <input type="text" id="reviewInput" placeholder="Type your review here" class="review-input" />
+    <button onclick="addReview()" class="colorful-btn">Submit Review</button>
+    <ul id="reviewList"></ul>
+  </section>
+
+  <!-- Firebase & JS -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="script.js"></script>
+  <script src="script2.js"></script>
+</body>
+</html>
